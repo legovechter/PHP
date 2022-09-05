@@ -21,6 +21,13 @@ while ($row = $result->fetch_assoc()) {
     
 }
 
+if($_SESSION["role"] == null){
+    $role = "user";
+}
+else{
+    $role = $_SESSION["role"];
+}
+
 ?>
  
 <!DOCTYPE html>
@@ -37,6 +44,7 @@ while ($row = $result->fetch_assoc()) {
     <h1 class="my-5">Role: <b>
         <?php 
         echo htmlspecialchars($_SESSION["role"]);
+        echo $role;
         ?>
     </h1>
     <p>
